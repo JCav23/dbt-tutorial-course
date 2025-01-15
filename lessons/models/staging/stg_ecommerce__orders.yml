@@ -58,7 +58,7 @@ models:
               expression: ">= shipped_at"
               where: "delivered_at IS NOT NULL AND shipped_at IS NOT NULL"
 
-      - name: num_of_items_ordered
+      - name: num_items_ordered
         description: "Number of items in the order"
         tests:
           - not_null
