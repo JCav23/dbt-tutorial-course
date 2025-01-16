@@ -5,7 +5,9 @@ models:
     description: "Line items from orders"
     columns: 
       - name: order_item_id
-        tests: 
+        tests:
+          - primary_key:
+              severity: error
           - not_null
           - unique
       
@@ -31,3 +33,5 @@ models:
         description: "How much the item sold for"
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
