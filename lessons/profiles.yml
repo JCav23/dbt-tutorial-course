@@ -1,4 +1,5 @@
 lessons:
+  target: dev
   outputs:
     dev:
       dataset: dbt_JCav23
@@ -10,4 +11,14 @@ lessons:
       project: dbt-udemy-447710
       threads: 60
       type: bigquery
-  target: dev
+
+    test:
+      dataset: dbt_JCav23_test
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: dbt-udemy-447710
+      threads: 60
+      type: bigquery
